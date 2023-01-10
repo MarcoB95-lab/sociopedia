@@ -8,7 +8,7 @@ export const verifyToken = async(req, res, next) => {
             return res.status(403).send("User not authorized");
         }
 
-        if (token.statsWith("Bearer")){
+        if (token.startsWith("Bearer")){
             token = token.slice(7, token.length).trimLeft();
         }
 
